@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,7 +15,7 @@
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     
-    <link rel="stylesheet" href="collection.css" />
+    <link rel="stylesheet" href="all-collection.css" />
     <title>Fabric Collections</title>
   </head>
   <body>
@@ -23,42 +24,66 @@
         <a href="#"><img src="../assets/images/logo.svg" alt="GSM LOGO" class="logo"/></a>
         <div class="nav-links">
         <a href="../index.html">Home</a>
-        <a href="#">Fabric Collections</a>
+        <a href="../fabricCollections/collection.html">Fabric Collections</a>
         <a href="#">About Us</a>
         <a href="#">Find your store</a>
         <a href="#">Contact Us</a>
       </div>
       </div>
     </nav>
-<main>
-    <section class="container">
-      <h3>Our Collections</h3>
-      <div class="collections-grid">
-          <div class="collection-item">
-              <a href="../royal-collection/royal-collection.html">
-                  <img src="../assets/images/fabric-collection/royal-collection.png" alt="Royal Collection">
-                  <div class="collection-title">Royal Collection</div>
-              </a>
-          </div>
-          
-          <div class="collection-item">
-              <a href="../ultra-collection/ultra-collection.html">
-                  <img src="../assets/images/fabric-collection/ultra-royal.png" alt="Ultra Royal">
-                  <div class="collection-title">Ultra Royal</div>
-              </a>
-          </div>
-          
-          <div class="collection-item">
-              <a href="../all-collection/all-collection.html">
-                  <img src="../assets/images/fabric-collection/all-collection.png" alt="All Collection">
-                  <div class="collection-title">All Collection</div>
-              </a>
-          </div>
-    
+<header>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="../assets/images/fabric-collection/royal-collection-images/01.png" alt=""></div>
+          <div class="swiper-slide"><img src="../assets/images/fabric-collection/royal-collection-images/02.png" alt=""></div>
+          <div class="swiper-slide"><img src="../assets/images/fabric-collection/royal-collection-images/01.png" alt=""></div>
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
-  </section>
+    </header>
+      <main>
+      <section class="collection-desc-container">
+        <p>Timeless yet contemporary, featuring a range of gentle neutrals to warming amber tones, ideal for upholstery, drapery, and accessories.</p>
+      </section>
+
 </main>
 
+<section class="products-section">
+    <h2 class="products-heading">Products</h2>
+    <div class="products-grid">
+        <div class="product-item">
+            <div class="product-image">
+                <img src="../assets/images/fabric-collection/ultra-royal.png" alt="Collection 01">
+            </div>
+            <p class="product-title">Collection-01</p>
+        </div>
+        <div class="product-item">
+            <div class="product-image">
+                <img src="../assets/images/fabric-collection/all-collection.png" alt="Collection 02">
+            </div>
+            <p class="product-title">Collection-02</p>
+        </div>
+        <div class="product-item">
+            <div class="product-image">
+                <img src="../assets/images/fabric-collection/ultra-royal.png" alt="Collection 03">
+            </div>
+            <p class="product-title">Collection-03</p>
+        </div>
+        <div class="product-item">
+            <div class="product-image">
+                <img src="../assets/images/fabric-collection/all-collection.png" alt="Collection 04">
+            </div>
+            <p class="product-title">Collection-04</p>
+        </div>
+        <div class="product-item">
+            <div class="product-image">
+                <img src="../assets/images/fabric-collection/ultra-royal.png" alt="Collection 05">
+            </div>
+            <p class="product-title">Collection-05</p>
+        </div>
+    </div>
+</section>
+  
     <!--Footer Container-->
     <footer class="footer">
       <div class="footer-container">
@@ -101,7 +126,7 @@
           </div>
       </div>
   </footer>
-
-<script src="collection.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="all-collection.js"></script>
   </body>
 </html>
