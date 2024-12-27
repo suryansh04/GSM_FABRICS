@@ -1,0 +1,167 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", serif;
+}
+
+body {
+  background-image: url("assets/images/background.svg");
+}
+
+/**LOGO **/
+.logo {
+  width: 80%;
+}
+/** Main **/
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Navigation Bar */
+
+nav {
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links a {
+  margin-right: 25px;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #000;
+}
+
+/** Map Section **/
+h3 {
+  margin-left: 40px;
+  margin-top: 40px;
+  font-weight: 500;
+}
+img {
+  border-radius: 10px;
+}
+/** FOOTER CONTAINER **/
+.footer {
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.brand-section {
+  flex: 1;
+}
+
+.footer-logo {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.brand-text {
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+.social-links img {
+  width: 24px;
+  height: 24px;
+}
+
+.company-section {
+  flex: 1;
+  padding: 0 40px;
+}
+
+.company-section h3 {
+  color: #000;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.company-links {
+  list-style: none;
+  padding: 0;
+}
+
+.company-links li {
+  margin-bottom: 15px;
+}
+
+.company-links a {
+  color: #333;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.contact-section {
+  flex: 1;
+}
+
+.contact-section h3 {
+  color: #000;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  color: #333;
+  font-size: 14px;
+}
+
+.contact-info p {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vertical-line {
+  width: 1px;
+  background-color: #3963af;
+  height: 100%;
+  margin: 0 20px;
+}
+.footer-icon {
+  width: 20px;
+}
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .company-section {
+    padding: 0;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+}
