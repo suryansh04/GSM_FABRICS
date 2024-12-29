@@ -14,6 +14,7 @@ body {
 /**LOGO **/
 .logo {
   width: 80%;
+  max-width: 200px;
 }
 /** Main **/
 
@@ -44,6 +45,22 @@ nav {
 
 .nav-links a {
   margin-right: 25px;
+  position: relative;
+}
+
+.nav-links a::after {
+  position: absolute;
+  left: 0;
+  bottom: -3x;
+  content: " ";
+  width: 0;
+  display: block;
+  overflow: hidden;
+  border-bottom: 2px solid #3963af;
+  transition: 0.4s all;
+}
+a:hover::after {
+  width: 100%;
 }
 
 a:link,
@@ -149,15 +166,19 @@ video {
 /**EXPLORE SECTION**/
 .explore-container {
   margin-bottom: 60px;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .explore-grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 60px;
+  width: 100%;
 }
 .card {
   position: relative;
+  width: 100%;
 }
 
 .explore-grid-container img {
@@ -190,6 +211,27 @@ video {
 /**Image Container **/
 .image-container {
   margin-bottom: 60px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/** Image Container Responsiveness**/
+@media screen and (max-width: 768px) {
+  .image-container {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-container {
+    padding: 0 10px;
+  }
 }
 
 /**Latest Arrival Section (SWIPER JS) **/
@@ -205,19 +247,10 @@ video {
   height: 100%;
 }
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 20px;
-}
-
 .swiper-slide img {
   display: block;
-  width: 19%;
   height: 100%;
+  width: 90%;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -439,5 +472,150 @@ video {
 
   .vertical-line {
     display: none;
+  }
+}
+
+/*********** Hamburger Menu Styles **************/
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin: 2px 0;
+  transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/******************** Responsive Styles ***************************/
+
+/** For screen of 1024 px or lower **/
+@media screen and (max-width: 1024px) {
+  .explore-grid-container {
+    gap: 40px;
+  }
+
+  .explore-grid-container .label {
+    width: 60%;
+  }
+}
+/** For screen of 768px or lower **/
+@media screen and (max-width: 768px) {
+  /**Logo **/
+  .logo {
+    width: 60%;
+    max-width: 150px;
+  }
+  /* Navigation */
+  .hamburger {
+    display: flex;
+    z-index: 1000;
+  }
+
+  .nav-links {
+    display: flex;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0;
+    background-image: url("assets/images/background.svg");
+  }
+
+  .nav-links a {
+    margin: 20px 0;
+    font-size: 20px;
+  }
+
+  /* Why Choose Us Section */
+  .why-choose-us-container {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  /* Explore Section */
+  .explore-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .explore-grid-container .label {
+    width: 70%;
+  }
+  /* Hero Section */
+  .hero-section-explore-btn {
+    transform: translateY(-60px);
+    padding: 8px 30px;
+    font-size: 12px;
+  }
+
+  /* About Us Section */
+  .about-us-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .about-us-content p {
+    font-size: 16px;
+  }
+}
+
+/** For screen of 480px or lower **/
+
+@media screen and (max-width: 480px) {
+  .logo {
+    width: 50%;
+    max-width: 120px;
+  }
+
+  .section-heading {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .about-us-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .explore-container {
+    padding: 0 15px;
+  }
+
+  .explore-grid-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .explore-grid-container .label {
+    width: 60%;
+    bottom: 20px;
   }
 }
