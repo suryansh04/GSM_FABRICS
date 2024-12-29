@@ -479,9 +479,6 @@ video {
   flex-direction: column;
   cursor: pointer;
   padding: 10px;
-  position: fixed;
-  right: 0;
-  top: 10px;
 }
 
 .hamburger span {
