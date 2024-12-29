@@ -28,6 +28,22 @@ nav {
 
 .nav-links a {
   margin-right: 25px;
+  position: relative;
+}
+
+.nav-links a::after {
+  position: absolute;
+  left: 0;
+  bottom: -3x;
+  content: " ";
+  width: 0;
+  display: block;
+  overflow: hidden;
+  border-bottom: 2px solid #3963af;
+  transition: 0.4s all;
+}
+a:hover::after {
+  width: 100%;
 }
 
 a:link,
@@ -156,7 +172,7 @@ a:active {
 }
 
 .footer-logo {
-  width: 80px;
+  width: 150px;
   margin-bottom: 15px;
 }
 
@@ -246,5 +262,85 @@ a:active {
 
   .vertical-line {
     display: none;
+  }
+}
+
+/** Responsiveness **/
+
+/*********** Hamburger Menu Styles **************/
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  position: fixed;
+  right: 0;
+  top: 10px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin: 2px 0;
+  transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/******************** Responsive Styles ***************************/
+/** For screen of 960px or lower **/
+@media (max-width: 960px) {
+  /**Logo **/
+  .logo {
+    max-width: 200px;
+  }
+  /* Navigation */
+  .hamburger {
+    display: flex;
+    z-index: 1000;
+  }
+
+  .nav-links {
+    display: flex;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    height: 100vh;
+    width: 75%;
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0;
+    background-image: url("../assets/images/background.svg");
+  }
+
+  .nav-links a {
+    margin: 20px 0;
+    font-size: 20px;
+  }
+}
+
+/** For screen of 480px or lower **/
+
+@media screen and (max-width: 480px) {
+  .logo {
+    max-width: 150px;
   }
 }
