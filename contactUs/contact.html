@@ -14,7 +14,7 @@
       href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
-    <link rel="stylesheet" href="store.css" />
+    <link rel="stylesheet" href="contact.css" />
     <title>GSM FABRICS</title>
   </head>
   <body>
@@ -38,9 +38,104 @@
     </nav>
 
     <main>
-      <h2 class="section-heading"><span>Find your nearest store</span></h2>
       <!--Map Integration-->
-      <div id="map" style="width: 100%; height: 500px"></div>
+      <div id="map"></div>
+
+      <!--Contact us Form -->
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="form-section">
+            <h2 class="section-title">GET IN TOUCH</h2>
+            <form id="contact-form">
+              <input
+                type="hidden"
+                name="access_key"
+                value="56b0dd5d-aa27-4614-881f-55de76552ac3"
+              />
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  class="form-input"
+                  placeholder="Full Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="tel"
+                  name="phone"
+                  class="form-input"
+                  placeholder="Mobile Number"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  name="message"
+                  class="form-textarea"
+                  placeholder="Message"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-button">Submit</button>
+            </form>
+          </div>
+
+          <div class="headquarters-section">
+            <h2 class="section-title">HEADQUARTERS</h2>
+            <div class="contact-info">
+              <div class="contact-item">
+                <img
+                  src="../assets/images/icons/location.svg"
+                  alt=""
+                  class="icon"
+                />
+                <p>
+                  Factory #38 Street 41, Industrial Area Zone 57 Doha, Qatar
+                </p>
+              </div>
+              <div class="contact-item">
+                <img
+                  src="../assets/images/icons/phone.svg"
+                  alt=""
+                  class="icon"
+                />
+                <p>+91 978523123</p>
+              </div>
+              <div class="contact-item">
+                <img
+                  src="../assets/images/icons/email.svg"
+                  alt=""
+                  class="icon"
+                />
+                <p>info@gsm.in</p>
+              </div>
+              <div class="contact-item">
+                <img
+                  src="../assets/images/icons/time.svg"
+                  alt=""
+                  class="icon"
+                />
+                <p>Monday - Saturday 09:30AM - 7:30PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="success-message" id="success-message">
+        Message sent successfully!
+      </div>
     </main>
 
     <!--Footer Container-->
@@ -107,6 +202,6 @@
         </div>
       </div>
     </footer>
-    <script src="store.js"></script>
+    <script src="contact.js"></script>
   </body>
 </html>

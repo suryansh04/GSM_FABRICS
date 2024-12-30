@@ -113,3 +113,46 @@ map.on("pointermove", function (e) {
 window.addEventListener("resize", () => {
   map.updateSize();
 });
+
+const form = document.getElementById("contact-form");
+const successMessage = document.getElementById("success-message");
+const submitButton = form.querySelector(".submit-button");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  // Show loading state
+  submitButton.classList.add("loading");
+  submitButton.textContent = "Sending...";
+
+  try {
+    const formData = new FormData(form);
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      // Show success message
+      successMessage.style.display = "block";
+
+      // Reset form
+      form.reset();
+
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        successMessage.style.display = "none";
+      }, 5000);
+    } else {
+      throw new Error("Submission failed");
+    }
+  } catch (error) {
+    alert("There was an error sending your message. Please try again.");
+  } finally {
+    // Reset button state
+    submitButton.classList.remove("loading");
+    submitButton.textContent = "Submit";
+  }
+});

@@ -332,7 +332,7 @@ body.no-scroll {
 
   .nav-links.active {
     right: 0;
-    background-image: url("assets/images/background.svg");
+    background-image: url("../assets/images/background.svg");
   }
 
   .nav-links a {
