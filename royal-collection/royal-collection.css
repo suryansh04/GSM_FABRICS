@@ -201,7 +201,7 @@ a:active {
 }
 
 .company-links li {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .company-links a {
@@ -285,7 +285,13 @@ a:active {
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
+/** Prevent Scrolling **/
 
+body.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
 /******************** Responsive Styles ***************************/
 /** For screen of 1024px or lower **/
 @media (max-width: 1024px) {
@@ -367,6 +373,10 @@ a:active {
 @media screen and (max-width: 480px) {
   .logo {
     max-width: 150px;
+  }
+
+  nav {
+    padding: 0 10px;
   }
   /** Changes **/
   .swiper-slide img {

@@ -28,6 +28,7 @@ main {
 .section-heading {
   font-size: 28px;
   margin-bottom: 20px;
+  text-align: center;
 }
 .section-heading span {
   color: #3963af;
@@ -418,7 +419,7 @@ video {
 }
 
 .company-links li {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .company-links a {
@@ -501,6 +502,14 @@ video {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/** Prevent Scrolling **/
+
+body.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 /******************** Responsive Styles ***************************/
 
 /** For screen of 1024 px or lower **/
@@ -572,9 +581,13 @@ video {
   .hero-section-explore-btn {
     transform: translateY(-60px);
     padding: 8px 30px;
-    font-size: 12px;
   }
 
+  .hero-section a:link,
+  .hero-section a:visited,
+  .hero-section a:active {
+    font-size: 14px;
+  }
   /* About Us Section */
   .about-us-container {
     width: 90%;
@@ -589,6 +602,9 @@ video {
 /** For screen of 480px or lower **/
 
 @media screen and (max-width: 480px) {
+  nav {
+    padding: 0 10px;
+  }
   .logo {
     max-width: 150px;
   }
@@ -599,10 +615,19 @@ video {
   }
 
   .about-us-container {
-    width: 95%;
+    width: 100%;
     padding: 15px;
   }
-
+  .about-us-container a {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .why-choose-us-box h3 {
+    font-size: 16px;
+  }
+  .why-choose-us-box p {
+    font-size: 14px;
+  }
   .explore-container {
     padding: 0 15px;
   }
@@ -613,7 +638,8 @@ video {
   }
 
   .explore-grid-container .label {
-    width: 60%;
+    width: 40%;
     bottom: 20px;
+    font-size: 14px;
   }
 }
